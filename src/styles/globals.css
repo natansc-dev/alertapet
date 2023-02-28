@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: "Dosis";
+  background: #fbfbfb;
+  font-size: 16px;
+  margin: 0;
+}
+
+ul li:not(:first-child)::after {
+  content: "";
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #f86ca7 0%, #ff7f18 100%);
+  position: absolute;
+  left: -25px;
+  top: 52%;
+  transform: translateY(-50%);
+}
