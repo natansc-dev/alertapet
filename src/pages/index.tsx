@@ -59,7 +59,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="h1-story-area mb-24">
+      <div className="mb-24">
         <div className="w-full px-3">
           <div className="flex flex-wrap justify-center w-11/12 mx-auto items-center">
             <div className="w-full sm:w-1/2">
@@ -72,7 +72,7 @@ export default function Home() {
 
                 <h2 className="font-bold text-5xl">Por que a Alerta Pet é a melhor chance de encontrar seu pet?</h2>
               </div>
-              <div className="story-content">
+              <div>
                 <p>A vantagem dos sistemas de anuncios em relação aos cartazes e postagens que os próprios donos distribuem é que <b>atingem um maior número de pessoas</b>. Além da cobertura de bairros próximos de casa e até mesmo no bairro de animais perdidos, os anuncios também <b>atingem todos os tipos de pessoas</b>. Não são apenas os amantes dos animais que se reúnem em determinados grupos nas redes sociais. <b>Os anuncios também podem cobrir cidades inteiras</b> se o seu animal de estimação desaparecido for longe demais.</p>
                 <div className="py-5">
                   <h3 className="text-2xl font-medium">Encontre seu melhor amigo! Com o serviço de anunciar seu pet desaparecido para que ele possa voltar para casa.</h3>
@@ -89,6 +89,49 @@ export default function Home() {
               <div className="mt-9 sm:mt-0">
                 <Image className="img-fluid" src={storyLImg} alt="" width={516} height={679} />
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="h1-feature-area">
+        <div className="w-full p-0">
+          <div className="flex flex-wrap justify-center w-11/12 mx-auto items-center bg">
+            <div className="col-lg-10 gap-4 flex items-center justify-content-lg-between justify-center flex-lg-nowrap flex-wrap ">
+              <div className="freture-title">
+                <h2 className="font-bold text-5xl">Como que funciona?</h2>
+              </div>
+
+              <div className="single-card">
+                <div className="icon">
+                  <Image src="assets/images/icon/badge1.svg" width={40} height={40} alt="" />
+                </div>
+                <div className="content">
+                  <h4>Plano</h4>
+                  <p>Selecione o plano que mais atende as necessidades.</p>
+                </div>
+              </div>
+
+              <div className="single-card">
+                <div className="icon">
+                  <Image src="assets/images/icon/badge1.svg" width={40} height={40} alt="" />
+                </div>
+                <div className="content">
+                  <h4>Informações</h4>
+                  <p>Coletamos o máximo de informações sobre seu Pet e o local que ele desapareceu.</p>
+                </div>
+              </div>
+
+              <div className="single-card">
+                <div className="icon">
+                  <Image src="assets/images/icon/badge1.svg" width={40} height={40} alt="" />
+                </div>
+                <div className="content">
+                  <h4>Anuncios</h4>
+                  <p>Iniciamos os anuncios notificando o desaparecimento o mais rapido possivel</p>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
