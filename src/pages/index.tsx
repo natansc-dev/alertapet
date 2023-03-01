@@ -97,17 +97,19 @@ export default function Home() {
       <div className="h1-feature-area">
         <div className="w-full p-0">
           <div className="flex flex-wrap justify-center w-11/12 mx-auto items-center bg">
-            <div className="col-lg-10 gap-4 flex items-center justify-content-lg-between justify-center flex-lg-nowrap flex-wrap ">
-              <div className="freture-title">
-                <h2 className="font-bold text-5xl">Como que funciona?</h2>
-              </div>
+            <div className="freture-title">
+              <h2 className="font-bold text-5xl">Como que funciona?</h2>
+            </div>
 
+            <div className="gap-4 flex items-center justify-content-lg-between justify-center flex-lg-nowrap flex-wrap">
               <div className="single-card">
                 <div className="icon">
                   <Image src="assets/images/icon/badge1.svg" width={40} height={40} alt="" />
                 </div>
+
                 <div className="content">
                   <h4>Plano</h4>
+
                   <p>Selecione o plano que mais atende as necessidades.</p>
                 </div>
               </div>
