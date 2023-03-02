@@ -4,6 +4,13 @@ import bannerImg from '../assets/new-banner-img.png'
 import pataRImg from '../assets/section-vec-r1.svg'
 import pataLImg from '../assets/section-vec-l1.svg'
 import storyLImg from '../assets/story-img1.png'
+import icon1ComoImg from '../assets/1.png'
+import icon2ComoImg from '../assets/2.png'
+import icon3ComoImg from '../assets/3.png'
+import icon1NumberImg from '../assets/icon1.png'
+import icon2NumberImg from '../assets/icon2.png'
+import icon3NumberImg from '../assets/icon3.png'
+import icon4NumberImg from '../assets/icon4.png'
 
 export default function Home() {
   return (
@@ -94,46 +101,114 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="h1-feature-area">
+      <div className="bg-[url('../assets/feature-bg.png')] py-32 bg-no-repeat bg-cover text-white">
         <div className="w-full p-0">
           <div className="flex flex-wrap justify-center w-11/12 mx-auto items-center bg">
-            <div className="freture-title">
-              <h2 className="font-bold text-5xl">Como que funciona?</h2>
+            <div className="mb-7">
+              <h2 className="font-bold text-5xl ">Como que funciona?</h2>
             </div>
 
-            <div className="gap-4 flex items-center justify-content-lg-between justify-center flex-lg-nowrap flex-wrap">
-              <div className="single-card">
-                <div className="icon">
-                  <Image src="assets/images/icon/badge1.svg" width={40} height={40} alt="" />
+            <div className="gap-4 flex flex-col sm:flex-row items-center justify-center">
+              <div className="max-w-xs rounded-lg">
+                <div className="w-[74px] h-[74px] rounded-full flex justify-center items-center bg-gradient-to-r from-[#F86CA7] to-[#FF7F18] mb-3">
+                  <Image src={icon1ComoImg} width={40} height={40} alt="" className="drop-shadow-2xl" />
                 </div>
 
                 <div className="content">
-                  <h4>Plano</h4>
+                  <h4 className="text-2xl font-bold">Plano</h4>
 
-                  <p>Selecione o plano que mais atende as necessidades.</p>
+                  <p className="text-lg">Selecione o plano que mais atende as suas necessidades.</p>
                 </div>
               </div>
 
-              <div className="single-card">
-                <div className="icon">
-                  <Image src="assets/images/icon/badge1.svg" width={40} height={40} alt="" />
+              <div className="max-w-xs  rounded-lg">
+                <div className="w-[74px] h-[74px] rounded-full flex justify-center items-center bg-gradient-to-r from-[#F86CA7] to-[#FF7F18] mb-3">
+                  <Image src={icon2ComoImg} width={40} height={40} alt="" className="drop-shadow-2xl" />
                 </div>
                 <div className="content">
-                  <h4>Informações</h4>
-                  <p>Coletamos o máximo de informações sobre seu Pet e o local que ele desapareceu.</p>
+                  <h4 className="text-2xl font-bold">Informações</h4>
+                  <p className="text-lg">Coletamos o máximo de informações sobre seu Pet e o local que ele desapareceu.</p>
                 </div>
               </div>
 
-              <div className="single-card">
-                <div className="icon">
-                  <Image src="assets/images/icon/badge1.svg" width={40} height={40} alt="" />
+              <div className="max-w-xs rounded-lg">
+
+                <div className="w-[74px] h-[74px] rounded-full flex justify-center items-center bg-gradient-to-r from-[#F86CA7] to-[#FF7F18] mb-3">
+                  <Image src={icon3ComoImg} width={40} height={40} alt="" className="drop-shadow-2xl" />
                 </div>
+
                 <div className="content">
-                  <h4>Anuncios</h4>
-                  <p>Iniciamos os anuncios notificando o desaparecimento o mais rapido possivel</p>
+                  <h4 className="text-2xl font-bold">Anuncios</h4>
+                  <p className="text-lg">Iniciamos os anuncios notificando o desaparecimento o mais rapido possivel</p>
                 </div>
               </div>
 
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="-mt-[58px] mb-24">
+        <div className="w-full px-3">
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <div className="w-full sm:w-1/4 px-4 flex items-center ">
+              <div className="bg-[#fbecec] p-4 rounded-lg flex items-center justify-around w-full shadow-md">
+                <div className="w-[74px] h-[74px] rounded-full flex justify-center items-center border-[1px] border-[#F86CA7]">
+                  <Image src={icon1NumberImg} width={54} height={54} alt="" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-1">
+                    <h3 className="text-5xl font-bold spacing tracking-widest">237</h3>
+                    <span className="text-5xl font-bold">+</span>
+                  </div>
+                  <p className="text-lg">Clientes</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="w-full sm:w-1/4 px-4 flex items-center ">
+              <div className="bg-[#eff8dd] p-4 rounded-lg flex items-center justify-around w-full shadow-md">
+                <div className="w-[74px] h-[74px] rounded-full flex justify-center items-center border-[1px] border-[#F86CA7]">
+                  <Image src={icon2NumberImg} width={54} height={54} alt="" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-1">
+                    <h3 className="text-5xl font-bold spacing tracking-widest">300</h3>
+                    <span className="text-5xl font-bold">+</span>
+                  </div>
+                  <p className="text-lg">Pet resgatados</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="w-full sm:w-1/4 px-4 flex items-center ">
+              <div className="bg-[#ffd9e7] p-4 rounded-lg flex items-center justify-around w-full shadow-md">
+                <div className="w-[74px] h-[74px] rounded-full flex justify-center items-center">
+                  <Image src={icon3NumberImg} width={54} height={54} alt="" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-1">
+                    <h3 className="text-5xl font-bold spacing tracking-widest">400</h3>
+                    <span className="text-5xl font-bold">+</span>
+                  </div>
+                  <p className="text-lg">Anuncios</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="w-full sm:w-1/4 px-4 flex items-center ">
+              <div className="bg-[#fdeae1] p-4 rounded-lg flex items-center justify-around w-full shadow-md">
+                <div className="w-[74px] h-[74px] rounded-full flex justify-center items-center">
+                  <Image src={icon4NumberImg} width={54} height={54} alt="" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-1">
+                    <h3 className="text-5xl font-bold spacing tracking-widest">2</h3>
+                    <span className="text-5xl font-bold">+</span>
+                  </div>
+                  <p className="text-lg">Anos de experiencia</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
