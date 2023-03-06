@@ -11,6 +11,7 @@ import icon1NumberImg from '../assets/icon1.png'
 import icon2NumberImg from '../assets/icon2.png'
 import icon3NumberImg from '../assets/icon3.png'
 import icon4NumberImg from '../assets/icon4.png'
+import checkImg from '../assets/pricing-check.svg'
 
 export default function Home() {
   return (
@@ -103,7 +104,7 @@ export default function Home() {
 
       <div className="bg-[url('../assets/feature-bg.png')] py-32 bg-no-repeat bg-cover text-white">
         <div className="w-full p-0">
-          <div className="flex flex-wrap justify-center w-11/12 mx-auto items-center bg">
+          <div className="flex flex-wrap justify-center w-11/12 mx-auto items-center">
             <div className="mb-7">
               <h2 className="font-bold text-5xl ">Como que funciona?</h2>
             </div>
@@ -207,6 +208,145 @@ export default function Home() {
                     <span className="text-5xl font-bold">+</span>
                   </div>
                   <p className="text-lg">Anos de experiencia</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div className="w-11/12 mx-auto">
+          <div className="flex mb-10">
+            <div className="w-full justify-center items-center">
+              <div className="section-title1 text-center">
+                <span className="flex relative justify-center items-center mb-2 text-xl font-medium">
+                  <Image src={pataLImg} alt="" width={24} height={36} />
+                  Planos
+                  <Image src={pataRImg} alt="" width={24} height={36} />
+                </span>
+                <h2 className="text-5xl font-bold">Escolha seu plano perfeito</h2>
+              </div>
+            </div>
+          </div>
+
+          <div className="w-full flex items-center justify-center gap-5">
+            <div className="w-4/12 bg-white rounded-lg shadow-sm p-11">
+              <div className="pricing-card">
+                <div className="text-center mb-4">
+                  <h4 className="text-2xl font-semibold mb-1">
+                    Pet Prata
+                  </h4>
+
+                  <h2 className="flex justify-center items-center text-6xl mb-1  font-bold">
+                    <span className="-mt-[24px] inline-block mr-1 text-lg">R$</span>
+                    87
+                  </h2>
+                </div>
+                <ul>
+                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
+                    Duração de 7 dias
+                    <Image src={checkImg} alt="" width={16} height={14} />
+                  </li>
+                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
+                    Raio de Alcance de 1 km
+                    <Image src={checkImg} alt="" width={16} height={14} />
+                  </li>
+                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
+                    Alcence mais de 10.000 pessoas
+                    <Image src={checkImg} alt="" width={16} height={14} />
+                  </li>
+                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
+                    Cartaz QR Code
+                    <Image src={checkImg} alt="" width={16} height={14} />
+                  </li>
+                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
+                    Publicação Instagram
+                    <Image src={checkImg} alt="" width={16} height={14} />
+                  </li>
+                </ul>
+                <div className="mt-4 flex items-center justify-center">
+                  <a href="#" className="text-2xl text-white font-bold rounded-3xl relative py-2 px-7 bg-gradient-to-r from-[#F86CA7] to-[#FF7F18]">Iniciar Buscas</a>
+                </div>
+              </div>
+            </div>
+
+            <div className="w-4/12 bg-white rounded-lg shadow-sm p-11">
+              <div className="pricing-card">
+                <div className="text-center mb-4">
+                  <h4 className="text-2xl font-semibold mb-1">
+                    Pet Prata
+                  </h4>
+
+                  <h2 className="flex justify-center items-center text-6xl mb-1  font-bold">
+                    <span className="-mt-[24px] inline-block mr-1 text-lg">R$</span>
+                    137
+                  </h2>
+                </div>
+                <ul>
+                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
+                    Duração de 14 dias
+                    <Image src={checkImg} alt="" width={16} height={14} />
+                  </li>
+                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
+                    Raio de Alcance de 3 km
+                    <Image src={checkImg} alt="" width={16} height={14} />
+                  </li>
+                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
+                    Alcence mais de 30.000 pessoas
+                    <Image src={checkImg} alt="" width={16} height={14} />
+                  </li>
+                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
+                    Cartaz QR Code
+                    <Image src={checkImg} alt="" width={16} height={14} />
+                  </li>
+                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
+                    Publicação Instagram
+                    <Image src={checkImg} alt="" width={16} height={14} />
+                  </li>
+                </ul>
+                <div className="mt-4 flex items-center justify-center">
+                  <a href="#" className="text-2xl text-white font-bold rounded-3xl relative py-2 px-7 bg-gradient-to-r from-[#F86CA7] to-[#FF7F18]">Iniciar Buscas</a>
+                </div>
+              </div>
+            </div>
+
+            <div className="w-4/12 bg-white rounded-lg shadow-sm p-11">
+              <div className="pricing-card">
+                <div className="text-center mb-4">
+                  <h4 className="text-2xl font-semibold mb-1">
+                    Pet Ouro
+                  </h4>
+
+                  <h2 className="flex justify-center items-center text-6xl mb-1  font-bold">
+                    <span className="-mt-[24px] inline-block mr-1 text-lg">R$</span>
+                    287
+                  </h2>
+                </div>
+                <ul>
+                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
+                    Duração de 30 dias
+                    <Image src={checkImg} alt="" width={16} height={14} />
+                  </li>
+                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
+                    Raio de Alcance de 1 km
+                    <Image src={checkImg} alt="" width={16} height={14} />
+                  </li>
+                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
+                    Alcence mais de 1000 pessoas
+                    <Image src={checkImg} alt="" width={16} height={14} />
+                  </li>
+                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
+                    Cartaz QR Code
+                    <Image src={checkImg} alt="" width={16} height={14} />
+                  </li>
+                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
+                    Publicação Instagram
+                    <Image src={checkImg} alt="" width={16} height={14} />
+                  </li>
+                </ul>
+                <div className="mt-4 flex items-center justify-center">
+                  <a href="#" className="text-2xl text-white font-bold rounded-3xl relative py-2 px-7 bg-gradient-to-r from-[#F86CA7] to-[#FF7F18]">Iniciar Buscas</a>
                 </div>
               </div>
             </div>
