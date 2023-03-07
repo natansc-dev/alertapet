@@ -14,10 +14,28 @@ import icon4NumberImg from '../assets/icon4.png'
 import checkImg from '../assets/pricing-check.svg'
 import phoneImg from '../assets/phone-icon.svg'
 import mailImg from '../assets/envelope.svg'
+import { GetStaticProps } from "next";
+import { stripe } from "@/lib/stripe";
+import Stripe from "stripe";
+import Head from "next/head";
+import Link from "next/link";
 
-export default function Home() {
+interface HomeProps {
+  products: {
+    id: string,
+    name: string,
+    price: string
+  }[]
+}
+
+export default function Home({ products }: HomeProps) {
+  console.log(products)
   return (
     <>
+      <Head>
+        <title>Alerta Pet - Não desista de encontrar seu melhor amigo!</title>
+      </Head>
+
       <div className="bg-pet-500 pb-12">
         <div className="w-full px-3 mx-auto">
           <div className="flex flex-wrap justify-center">
@@ -217,7 +235,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div>
+      <div className="mb-20">
         <div className="w-11/12 mx-auto">
           <div className="flex mb-10">
             <div className="w-full justify-center items-center">
@@ -233,176 +251,103 @@ export default function Home() {
           </div>
 
           <div className="w-full flex items-center justify-center gap-5">
-            <div className="w-4/12 bg-white rounded-lg shadow-sm p-11">
-              <div className="pricing-card">
-                <div className="text-center mb-4">
-                  <h4 className="text-2xl font-semibold mb-1">
-                    Pet Prata
-                  </h4>
+            {products.map((product) => {
+              return (
 
-                  <h2 className="flex justify-center items-center text-6xl mb-1  font-bold">
-                    <span className="-mt-[24px] inline-block mr-1 text-lg">R$</span>
-                    87
-                  </h2>
-                </div>
-                <ul>
-                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
-                    Duração de 7 dias
-                    <Image src={checkImg} alt="" width={16} height={14} />
-                  </li>
-                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
-                    Raio de Alcance de 1 km
-                    <Image src={checkImg} alt="" width={16} height={14} />
-                  </li>
-                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
-                    Alcence mais de 10.000 pessoas
-                    <Image src={checkImg} alt="" width={16} height={14} />
-                  </li>
-                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
-                    Cartaz QR Code
-                    <Image src={checkImg} alt="" width={16} height={14} />
-                  </li>
-                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
-                    Publicação Instagram
-                    <Image src={checkImg} alt="" width={16} height={14} />
-                  </li>
-                </ul>
-                <div className="mt-4 flex items-center justify-center">
-                  <a href="#" className="text-2xl text-white font-bold rounded-3xl relative py-2 px-7 bg-gradient-to-r from-[#F86CA7] to-[#FF7F18]">Iniciar Buscas</a>
-                </div>
-              </div>
-            </div>
+                <div key={product.id} className="w-4/12 bg-white rounded-lg shadow-sm p-11">
+                  <div className="pricing-card">
+                    <div className="text-center mb-4">
+                      <h4 className="text-2xl font-semibold mb-1">
+                        {product.name}
+                      </h4>
 
-            <div className="w-4/12 bg-white rounded-lg shadow-sm p-11">
-              <div className="pricing-card">
-                <div className="text-center mb-4">
-                  <h4 className="text-2xl font-semibold mb-1">
-                    Pet Prata
-                  </h4>
-
-                  <h2 className="flex justify-center items-center text-6xl mb-1  font-bold">
-                    <span className="-mt-[24px] inline-block mr-1 text-lg">R$</span>
-                    137
-                  </h2>
+                      <h2 className="flex justify-center items-center text-6xl mb-1  font-bold">
+                        <span className="-mt-[24px] inline-block mr-1 text-lg">R$</span>
+                        {product.price}
+                      </h2>
+                    </div>
+                    <ul>
+                      <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
+                        Duração de 7 dias
+                        <Image src={checkImg} alt="" width={16} height={14} />
+                      </li>
+                      <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
+                        Raio de Alcance de 1 km
+                        <Image src={checkImg} alt="" width={16} height={14} />
+                      </li>
+                      <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
+                        Alcence mais de 10.000 pessoas
+                        <Image src={checkImg} alt="" width={16} height={14} />
+                      </li>
+                      <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
+                        Cartaz QR Code
+                        <Image src={checkImg} alt="" width={16} height={14} />
+                      </li>
+                      <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
+                        Publicação Instagram
+                        <Image src={checkImg} alt="" width={16} height={14} />
+                      </li>
+                    </ul>
+                    <div className="mt-4 flex items-center justify-center">
+                      <Link href={`produto/${product.id}`} prefetch={false} className="text-2xl text-white font-bold rounded-3xl relative py-2 px-7 bg-gradient-to-r from-[#F86CA7] to-[#FF7F18]">
+                        Iniciar Buscas
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-                <ul>
-                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
-                    Duração de 14 dias
-                    <Image src={checkImg} alt="" width={16} height={14} />
-                  </li>
-                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
-                    Raio de Alcance de 3 km
-                    <Image src={checkImg} alt="" width={16} height={14} />
-                  </li>
-                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
-                    Alcence mais de 30.000 pessoas
-                    <Image src={checkImg} alt="" width={16} height={14} />
-                  </li>
-                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
-                    Cartaz QR Code
-                    <Image src={checkImg} alt="" width={16} height={14} />
-                  </li>
-                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
-                    Publicação Instagram
-                    <Image src={checkImg} alt="" width={16} height={14} />
-                  </li>
-                </ul>
-                <div className="mt-4 flex items-center justify-center">
-                  <a href="#" className="text-2xl text-white font-bold rounded-3xl relative py-2 px-7 bg-gradient-to-r from-[#F86CA7] to-[#FF7F18]">Iniciar Buscas</a>
-                </div>
-              </div>
-            </div>
-
-            <div className="w-4/12 bg-white rounded-lg shadow-sm p-11">
-              <div className="pricing-card">
-                <div className="text-center mb-4">
-                  <h4 className="text-2xl font-semibold mb-1">
-                    Pet Ouro
-                  </h4>
-
-                  <h2 className="flex justify-center items-center text-6xl mb-1  font-bold">
-                    <span className="-mt-[24px] inline-block mr-1 text-lg">R$</span>
-                    287
-                  </h2>
-                </div>
-                <ul>
-                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
-                    Duração de 30 dias
-                    <Image src={checkImg} alt="" width={16} height={14} />
-                  </li>
-                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
-                    Raio de Alcance de 1 km
-                    <Image src={checkImg} alt="" width={16} height={14} />
-                  </li>
-                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
-                    Alcence mais de 1000 pessoas
-                    <Image src={checkImg} alt="" width={16} height={14} />
-                  </li>
-                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
-                    Cartaz QR Code
-                    <Image src={checkImg} alt="" width={16} height={14} />
-                  </li>
-                  <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
-                    Publicação Instagram
-                    <Image src={checkImg} alt="" width={16} height={14} />
-                  </li>
-                </ul>
-                <div className="mt-4 flex items-center justify-center">
-                  <a href="#" className="text-2xl text-white font-bold rounded-3xl relative py-2 px-7 bg-gradient-to-r from-[#F86CA7] to-[#FF7F18]">Iniciar Buscas</a>
-                </div>
-              </div>
-            </div>
+              )
+            })}
           </div>
         </div>
       </div>
 
-      <footer>
-        <div className="container">
-          <div className="row pt-90 pb-90 justify-content-center">
-            <div className="col-lg-3 col-sm-6 order-lg-1 order-2 d-flex justify-content-sm-start justify-content-start">
-              <div className="footer-items contact ">
-                <h3>Contacts</h3>
-                <div className="hotline mb-30">
-                  <div className="hotline-icon">
+      <footer className="bg-[#fff5ed] bg-[url('../assets/footer-bg.png')] bg-cover bg-center bg-no-repeat">
+        <div className="w-11/12 mx-auto">
+          <div className="flex py-20 justify-content-center">
+            <div className="w-3/12 flex justify-content-sm-start justify-content-start">
+              <div className="footer-items contact">
+                <h3 className="text-3xl font-bold mb-5">Contato</h3>
+                <div className="flex items-center mb-7">
+                  <div className="mr-3">
                     <Image src={phoneImg} alt="" width={23} height={23} />
                   </div>
-                  <div className="hotline-info">
-                    <h6 className="mb-10"><a href="tel:+8801761111456">+880 176 1111 456</a></h6>
-                    <h6><a href="tel:+8801701111000">+880 170 1111 000</a></h6>
+
+                  <div>
+                    <h6>
+                      <a href="tel:+551900000000">+55 19 0 0000-000</a>
+                    </h6>
                   </div>
                 </div>
-                <div className="email mb-30">
-                  <div className="email-icon">
+
+                <div className="flex items-center mb-7">
+                  <div className="mr-3">
                     <Image src={mailImg} alt="" width={23} height={23} />
                   </div>
-                  <div className="email-info">
-                    <h6 className="mb-10"><a href="mailto:info@example.com">info@example.com</a></h6>
-                    <h6><a href="mailto:info@support.com">info@support.com</a></h6>
-                  </div>
-                </div>
-                <div className="email">
-                  <div className="email-icon">
-                    <Image src={mailImg} alt="" width={23} height={23} />
-                  </div>
-                  <div className="email-info">
-                    <h6 className="mb-10"><a>168/170, Avenue 01, Mirpur</a></h6>
-                    <h6><a>DOHS, Bangladesh</a></h6>
+                  <div>
+                    <h6>
+                      <a href="tel:+551900000000">contato@dominio.com.br</a>
+                    </h6>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-lg-6 d-flex align-items-center order-lg-2 order-1 justify-content-sm-center justify-content-start">
-              <div className="footer-items">
-                <h2>want <span>to keep</span><br />
-                  your pet in, <span>our center</span>?</h2>
-                <div className="book-btn">
-                  <a className="primary-btn1" href="contact.html">Book Now</a>
+
+            <div className="w-6/12 flex items-center justify-center">
+              <div>
+                <h2 className="text-5xl text-center font-normal">
+                  Não <span className="font-bold">desista</span>
+                  de encontrar<br /> <span className="font-bold">seu melhor amigo</span>!
+                </h2>
+
+                <div className="flex justify-center pt-5">
+                  <a className="text-2xl text-white font-bold rounded-3xl relative py-2 px-7 bg-gradient-to-r from-[#F86CA7] to-[#FF7F18]" href="contact.html">Iniciar Buscas</a>
                 </div>
               </div>
             </div>
-            <div className="col-lg-3 col-sm-6 d-flex justify-content-sm-end justify-content-start order-3">
+
+            <div className="w-3/12 flex justify-end">
               <div className="footer-items opening-time">
-                <h3>Opening Hours</h3>
+                <h3 className="text-3xl font-bold mb-5">Opening Hours</h3>
                 <h6 className="mb-25">Mon - Fri: 9.00AM - 6.00PM</h6>
                 <h6 className="mb-25">Saturday: 9.00AM - 6.00PM</h6>
                 <h6>Sunday: Closed</h6>
@@ -415,18 +360,19 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="row border-top">
-            <div className="col-lg-6">
+
+          <div className="flex border-t-[1px] py-5">
+            <div className="w-6/12">
               <div className="copyright-area">
-                <p>© 2023 Scooby is Proudly Powered by <a href="https://www.egenslab.com/"> Egens Lab.</a></p>
+                <p>© 2023 AlertaPet - Feito por Sweetspot Mídia</p>
               </div>
             </div>
-            <div className="col-lg-6 d-flex justify-content-lg-end justify-content-center">
-              <ul className="footer-btm-menu">
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms &amp; Conditions</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Help</a></li>
+            <div className="w-6/12 flex justify-end">
+              <ul className="flex items-center list-none gap-7">
+                <li><a href="#">Politica de Privacidade</a></li>
+                <li><a href="#">Termos &amp; Condições</a></li>
+                <li><a href="#">Planos</a></li>
+                <li><a href="#">Suporte</a></li>
               </ul>
             </div>
           </div>
@@ -434,4 +380,31 @@ export default function Home() {
       </footer>
     </>
   )
+}
+
+
+export const getStaticProps: GetStaticProps = async () => {
+  const response = await stripe.products.list({
+    expand: ['data.default_price']
+  })
+
+  const products = response.data.map(product => {
+    const price = product.default_price as Stripe.Price
+
+    return {
+      id: product.id,
+      name: product.name,
+      price: price.unit_amount ? new Intl.NumberFormat('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+      }).format(price.unit_amount / 100) : null
+    }
+  })
+
+  return {
+    props: {
+      products
+    },
+    revalidate: 60 * 60 * 2 // 2 hours,
+  }
 }
