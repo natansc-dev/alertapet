@@ -5,6 +5,8 @@ import Link from "next/link";
 import Stripe from "stripe";
 import { stripe } from "../lib/stripe";
 import placeholderImg from '../assets/placeholder.svg'
+import Nav from "@/components/nav";
+import Footer from "@/components/footer";
 interface SuccessProps {
   customer_name: string,
   product: {
@@ -21,6 +23,8 @@ export default function Success({ customer_name, product }: SuccessProps) {
         <meta name="robots" content="noindex" />
       </Head>
 
+      <Nav />
+
       <div>
         <h1>Sucesso!</h1>
 
@@ -34,6 +38,8 @@ export default function Success({ customer_name, product }: SuccessProps) {
           Voltar ao catálogo
         </Link>
       </div>
+
+      <Footer />
     </>
   )
 }
