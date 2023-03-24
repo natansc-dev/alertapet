@@ -156,16 +156,17 @@ export default function Product({ product }: ProductProps) {
 
       <div className="flex w-11/12 mx-auto gap-10 my-12">
         <div>
-          <Image src={placeholderImg} alt={""} width={520} height={480} />
+          <Image src={product.image_url} alt={""} width={520} height={480} />
         </div>
         <div>
           <h1 className="text-2xl font-bold">{product.name}</h1>
 
-          <p>{product.description}</p>
-          <p className="mt-4 text-lg font-semibold">Alcance potencial de 6000 a 10000 pessoas + alcance da nossa fanpage no FACEBOOK com 30 MIL seguidores</p>
-          <p className="mt-4 font-extralight text-sm">(O alcance é estimado com base em grandes cidades. Se o local que o Pet desapareceu é uma pequena cidade ou um lugar pouco povoado, esse alcance pode ser reduzido)</p>
+          <p className="mt-4 text-xl font-semibold">Alcance potencial de 6000 a 10000 pessoas</p>
 
-          <p className="mt-4 text-lg font-semibold">O que está incluso nesse plano?</p>
+          <p className="mt-4 font-extralight text-sm">{product.description}</p>
+
+          <p className="mt-4 text-xl font-semibold">O que está incluso nesse plano?</p>
+
           <ul className="list-disc ml-5 mt-3">
             <li>Acompanhamento dos comentários</li>
             <li>Atendimento personalizado</li>
@@ -182,7 +183,11 @@ export default function Product({ product }: ProductProps) {
             <li>Após a divulgação seu PET ficará em nossas plataformas e paginas até que ele seja encontrado</li>
           </ul>
 
-          <p className="mt-4">{product.price}</p>
+          <p className="mt-4">
+            <del className="text-[#898989] text-sm">R$ 97,00</del>
+            <br />
+            <ins className="text-[#1ab794] text-4xl font-bold no-underline">{product.price}</ins>
+          </p>
 
           <button
             onClick={() => handleBuyProduct()}
@@ -288,6 +293,8 @@ export const getStaticProps: GetStaticProps<any, { slug: string }> = async ({ pa
     expand: ['default_price']
   })
 
+  console.log(product.attributes)
+
   const price = product.default_price as Stripe.Price
 
   return {
@@ -295,6 +302,7 @@ export const getStaticProps: GetStaticProps<any, { slug: string }> = async ({ pa
       product: {
         id: product.id,
         name: product.name,
+        image_url: product.images[0],
         price: price.unit_amount ? new Intl.NumberFormat('pt-BR', {
           style: 'currency',
           currency: 'BRL',
