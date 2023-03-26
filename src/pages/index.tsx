@@ -26,6 +26,22 @@ export default function Home({ products }: HomeProps) {
         <title>
           Alerta Pet - Não desista de encontrar seu melhor amigo!
         </title>
+        <meta name="description" content="Encontre seu pet utilizando a melhor maneira possivel? Anuncio! A Alerta Pet é um serviço que utiliza o tráfego pago para atigir o maior número de pessoas informando o desaparecimento do seu pet." />
+        <meta name="author" content="Sweetspot Mídia" />
+        {/* Facebook Meta Tags */}
+        <meta property="og:title" content="Alerta Pet - Não desista de encontrar seu melhor amigo!" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.alertapet.com/" />
+        <meta property="og:image" content="https://www.alertapet.com/android-chrome-192x192.png" />
+        <meta property="og:description" content="Encontre seu pet utilizando a melhor maneira possivel? Anuncio! A Alerta Pet é um serviço que utiliza o tráfego pago para atigir o maior número de pessoas informando o desaparecimento do seu pet." />
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:creator" content="Alerta Pet - Não desista de encontrar seu melhor amigo!" />
+        <meta name="twitter:site" content="Alerta Pet - Não desista de encontrar seu melhor amigo!" />
+        <meta name="twitter:image" content="https://www.alertapet.com/android-chrome-192x192.png" />
+        <meta name="twitter:domain" content="https://www.alertapet.com/" />
+        <meta name="twitter:title" content="Alerta Pet - Não desista de encontrar seu melhor amigo!" />
+        <meta name="twitter:description" content="Encontre seu pet utilizando a melhor maneira possivel? Anuncio! A Alerta Pet é um serviço que utiliza o tráfego pago para atigir o maior número de pessoas informando o desaparecimento do seu pet." />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
