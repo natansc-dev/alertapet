@@ -19,7 +19,7 @@ interface ProductProps {
     name: string,
     image_url: string,
     price: string
-    price_before: string
+    price_before: number
     description: string
     defaultPriceId: string
   }
@@ -162,25 +162,41 @@ export default function Product({ product }: ProductProps) {
         <div>
           <h1 className="text-2xl font-bold">{product.name}</h1>
 
-          <p className="mt-4 text-xl font-semibold">Alcance potencial de 6000 a 10000 pessoas</p>
+          <p className="mt-4 text-xl font-semibold">
+            {product.name === 'Pet Prata' && ("Alcance potencial de 6.000 a 10.000 pessoas")}
+            {product.name === 'Pet Bronze' && ("Alcance potencial de 10.000 a 20.000 pessoas")}
+            {product.name === 'Pet Ouro' && ("Alcance potencial de 20.000 a 50.000 pessoas")}
+          </p>
 
           <p className="mt-4 font-extralight text-sm">{product.description}</p>
 
           <p className="mt-4 text-xl font-semibold">O que está incluso nesse plano?</p>
 
           <ul className="list-disc ml-5 mt-3">
+            <li>Gerenciamento e veiculação do alerta(Propaganda) geolocalizada</li>
+
             <li>Panfleto personalizado com QR Code direcionando para WhatsApp do Tutor</li>
+
             <li>Acompanhamento de mensagens e comentários das publicações</li>
-            <li>Atendimento personalizado</li>
+
+            <li>Atendimento e suporte personalizado</li>
+
             <li>Filtro de informações recebidas e dicas</li>
-            <li>Seu pet dentro do nosso Mapa com a ultima localização onde ele foi visto pela ultima vez</li>
+
             <li>Envio de relatório de visualizações e pessoas alcançadas diariamente</li>
+
+            <li>Publicações diarias no grupos da cidade e região</li>
+
             <li>Propaganda geolocalizada com Duração 7 dias</li>
-            <li>Após a divulgação seu PET ficará em nossas plataformas e paginas até que ele seja encontrado</li>
           </ul>
 
           <p className="mt-4">
-            <del className="text-[#898989] text-sm">{product.price.replace("R$", "") + 49}</del>
+            <del className="text-[#898989] text-sm">
+              {new Intl.NumberFormat('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+              }).format((product.price_before + 4900) / 100)}
+            </del>
             <br />
             <ins className="text-[#1ab794] text-4xl font-bold no-underline">{product.price}</ins>
           </p>
