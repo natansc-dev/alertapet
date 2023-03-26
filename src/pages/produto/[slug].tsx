@@ -187,7 +187,12 @@ export default function Product({ product }: ProductProps) {
 
             <li>Publicações diarias no grupos da cidade e região</li>
 
-            <li>Propaganda geolocalizada com Duração 7 dias</li>
+            <li>
+
+              {product.name === 'Pet Prata' && ("Propaganda geolocalizada com Duração 7 dias")}
+              {product.name === 'Pet Bronze' && ("Propaganda geolocalizada com Duração 14 dias")}
+              {product.name === 'Pet Ouro' && ("Propaganda geolocalizada com Duração 30 dias")}
+            </li>
           </ul>
 
           <p className="mt-4">
