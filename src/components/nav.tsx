@@ -21,7 +21,7 @@ export default function Nav() {
     <Disclosure as="nav" className="bg-[#001D23]">
       {({ open }) => (
         <>
-          <div className="mx-auto w-11/12 px-2 sm:px-6 lg:px-8">
+          <div className="mx-auto w-11/12">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
@@ -35,7 +35,7 @@ export default function Nav() {
                 </Disclosure.Button>
               </div>
 
-              <div className="flex flex-1 items-center justify-center sm:items-stretch">
+              <div className="flex flex-1 items-center justify-between">
                 <Link href="/" className="flex flex-shrink-0 items-center">
                   <Image
                     className="block h-8 w-auto lg:hidden"

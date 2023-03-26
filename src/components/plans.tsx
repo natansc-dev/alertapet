@@ -3,6 +3,7 @@ import Link from "next/link"
 import pataRImg from '../assets/section-vec-r1.svg'
 import pataLImg from '../assets/section-vec-l1.svg'
 import checkImg from '../assets/pricing-check.svg'
+import xImg from '../assets/pricing-X.svg'
 
 interface PlansProps {
   products: {
@@ -44,17 +45,23 @@ export default function Plans({ products }: PlansProps) {
                       {product.price.replace('R$', '')}
                     </h2>
                   </div>
+
                   <ul>
                     <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
-                      Duração de 7 dias
+                      {product.name === 'Pet Prata' && ("Duração de 7 dias")}
+                      {product.name === 'Pet Bronze' && ("Duração de 14 dias")}
+                      {product.name === 'Pet Ouro' && ("Duração de 30 dias")}
+                    </li>
+                    <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
+                      {product.name === 'Pet Prata' && ("Raio de Alcance de até 3 km")}
+                      {product.name === 'Pet Bronze' && ("Raio de Alcance de até 5 km")}
+                      {product.name === 'Pet Ouro' && ("Raio de Alcance de até 8 km")}
                       <Image src={checkImg} alt="" width={16} height={14} />
                     </li>
                     <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
-                      Raio de Alcance de 1 km
-                      <Image src={checkImg} alt="" width={16} height={14} />
-                    </li>
-                    <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
-                      Alcence mais de 10.000 pessoas
+                      {product.name === 'Pet Prata' && ("Pode atingir 6.000 à 10.000 pessoas")}
+                      {product.name === 'Pet Bronze' && ("Pode atingir 10.000 à 20.000 pessoas")}
+                      {product.name === 'Pet Ouro' && ("Pode atingir 20.000 à 50.000 pessoas")}
                       <Image src={checkImg} alt="" width={16} height={14} />
                     </li>
                     <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
@@ -63,7 +70,19 @@ export default function Plans({ products }: PlansProps) {
                     </li>
                     <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
                       Publicação Instagram
-                      <Image src={checkImg} alt="" width={16} height={14} />
+                      {product.name === 'Pet Prata' ? (
+                        <Image src={xImg} alt="" width={16} height={14} />
+                      ) : (
+                        <Image src={checkImg} alt="" width={16} height={14} />
+                      )}
+                    </li>
+                    <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
+                      Publicação nos Grupos da Cidade e Região
+                      {product.name === 'Pet Prata' ? (
+                        <Image src={xImg} alt="" width={16} height={14} />
+                      ) : (
+                        <Image src={checkImg} alt="" width={16} height={14} />
+                      )}
                     </li>
                   </ul>
                   <div className="mt-4 flex items-center justify-center">

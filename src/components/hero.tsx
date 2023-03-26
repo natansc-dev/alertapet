@@ -18,7 +18,7 @@ export default function Hero() {
                       <li className="text-lg relative">Lealdade</li>
                     </ul>
                   </div>
-                  <h1 className="text-4xl sm:text-6xl text-center font-extrabold mb-0 md:text-left">
+                  <h1 className="md:text-[2.5rem] text-4xl sm:text-6xl text-center font-extrabold mb-0 md:text-left">
                     <p className="mb-6">Não desista de encontrar seu melhor amigo!</p>
                     <p className="text-3xl">Anuncie seu pet desaparecido e aumente as chances de reencontrá-lo com nossos serviços.</p>
                   </h1>

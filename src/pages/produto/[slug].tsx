@@ -19,6 +19,7 @@ interface ProductProps {
     name: string,
     image_url: string,
     price: string
+    price_before: string
     description: string
     defaultPriceId: string
   }
@@ -168,23 +169,18 @@ export default function Product({ product }: ProductProps) {
           <p className="mt-4 text-xl font-semibold">O que está incluso nesse plano?</p>
 
           <ul className="list-disc ml-5 mt-3">
-            <li>Acompanhamento dos comentários</li>
+            <li>Panfleto personalizado com QR Code direcionando para WhatsApp do Tutor</li>
+            <li>Acompanhamento de mensagens e comentários das publicações</li>
             <li>Atendimento personalizado</li>
             <li>Filtro de informações recebidas e dicas</li>
-            <li>Página exclusiva na web com alta conversão de compartilhamento</li>
-            <li>Página com botão de mensagem para o WhatsApp cadastrado</li>
-            <li>Página com botão para impressão do panfleto em PDF (qualquer pessoa que entrar na página consegue
-              imprimir e te ajudar na divulgação)</li>
-            <li>Cadastro dentro do BuscadorPET visto por cerca de 15mil pessoas mensalmente</li>
             <li>Seu pet dentro do nosso Mapa com a ultima localização onde ele foi visto pela ultima vez</li>
-            <li>Panfleto personalizado com direcionamento para pagina do seu PET</li>
-            <li>Envio de relatório de visualizações diariamente</li>
-            <li>Propaganda geolocalizada com Duração 3 dias</li>
+            <li>Envio de relatório de visualizações e pessoas alcançadas diariamente</li>
+            <li>Propaganda geolocalizada com Duração 7 dias</li>
             <li>Após a divulgação seu PET ficará em nossas plataformas e paginas até que ele seja encontrado</li>
           </ul>
 
           <p className="mt-4">
-            <del className="text-[#898989] text-sm">R$ 97,00</del>
+            <del className="text-[#898989] text-sm">{product.price.replace("R$", "") + 49}</del>
             <br />
             <ins className="text-[#1ab794] text-4xl font-bold no-underline">{product.price}</ins>
           </p>
@@ -223,7 +219,7 @@ export default function Product({ product }: ProductProps) {
                   </div>
                   <div>
                     <h6>
-                      <a href="tel:+551900000000">contato@dominio.com.br</a>
+                      <a href="tel:+551900000000">contato@alertapet.com</a>
                     </h6>
                   </div>
                 </div>
@@ -293,8 +289,6 @@ export const getStaticProps: GetStaticProps<any, { slug: string }> = async ({ pa
     expand: ['default_price']
   })
 
-  console.log(product.attributes)
-
   const price = product.default_price as Stripe.Price
 
   return {
@@ -307,6 +301,7 @@ export const getStaticProps: GetStaticProps<any, { slug: string }> = async ({ pa
           style: 'currency',
           currency: 'BRL',
         }).format(price.unit_amount / 100) : null,
+        price_before: price.unit_amount ? price.unit_amount : null,
         description: product.description,
         defaultPriceId: price.id
       }
