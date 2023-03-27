@@ -14,7 +14,7 @@ interface PlansProps {
 }
 export default function Plans({ products }: PlansProps) {
   return (
-    <div id="plans" className="mb-20">
+    <div id="planos-e-precos" className="mb-20">
       <div className="w-11/12 mx-auto">
         <div className="flex mb-10">
           <div className="w-full justify-center items-center">

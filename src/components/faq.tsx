@@ -27,7 +27,7 @@ export default function Faq() {
                   <>
                     <Disclosure.Button
                       className={`${open ? 'border-b-[#F86CA7]' : ''
-                        } flex w-full justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
+                        } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
                     >
                       <span>O que é Alerta Pet?</span>
                       <ChevronUpIcon
@@ -42,12 +42,12 @@ export default function Faq() {
                 )}
               </Disclosure>
 
-              <Disclosure as="div" className="mt-2">
+              <Disclosure as="div" className="my-4">
                 {({ open }) => (
                   <>
                     <Disclosure.Button
                       className={`${open ? 'border-b-[#F86CA7]' : ''
-                        } flex w-full justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
+                        } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
                     >
                       <span>Como funciona?</span>
                       <ChevronUpIcon
@@ -62,7 +62,7 @@ export default function Faq() {
                 )}
               </Disclosure>
 
-              <Disclosure as="div" className="mt-2">
+              <Disclosure as="div" className="my-4">
                 {({ open }) => (
                   <>
                     <Disclosure.Button
@@ -83,12 +83,12 @@ export default function Faq() {
                 )}
               </Disclosure>
 
-              <Disclosure as="div" className="mt-2">
+              <Disclosure as="div" className="my-4">
                 {({ open }) => (
                   <>
                     <Disclosure.Button
                       className={`${open ? 'border-b-[#F86CA7]' : ''
-                        } flex w-full justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
+                        } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
                     >
                       <span>Quais são as vantagens?</span>
                       <ChevronUpIcon
@@ -103,12 +103,12 @@ export default function Faq() {
                 )}
               </Disclosure>
 
-              <Disclosure as="div" className="mt-2">
+              <Disclosure as="div" className="my-4">
                 {({ open }) => (
                   <>
                     <Disclosure.Button
                       className={`${open ? 'border-b-[#F86CA7]' : ''
-                        } flex w-full justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
+                        } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
                     >
                       <span>Como eu sei que o anúncio foi realizado?</span>
                       <ChevronUpIcon
@@ -123,12 +123,12 @@ export default function Faq() {
                 )}
               </Disclosure>
 
-              <Disclosure as="div" className="mt-2">
+              <Disclosure as="div" className="my-4">
                 {({ open }) => (
                   <>
                     <Disclosure.Button
                       className={`${open ? 'border-b-[#F86CA7]' : ''
-                        } flex w-full justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
+                        } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
                     >
                       <span>O que acontece após pagar?</span>
                       <ChevronUpIcon
@@ -143,12 +143,12 @@ export default function Faq() {
                 )}
               </Disclosure>
 
-              <Disclosure as="div" className="mt-2">
+              <Disclosure as="div" className="my-4">
                 {({ open }) => (
                   <>
                     <Disclosure.Button
                       className={`${open ? 'border-b-[#F86CA7]' : ''
-                        } flex w-full justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
+                        } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
                     >
                       <span>Quem faz a publicação?</span>
                       <ChevronUpIcon
@@ -163,12 +163,12 @@ export default function Faq() {
                 )}
               </Disclosure>
 
-              <Disclosure as="div" className="mt-2">
+              <Disclosure as="div" className="my-4">
                 {({ open }) => (
                   <>
                     <Disclosure.Button
                       className={`${open ? 'border-b-[#F86CA7]' : ''
-                        } flex w-full justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
+                        } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
                     >
                       <span>Vocês garantem que meu pet será encontrado?</span>
                       <ChevronUpIcon
@@ -183,12 +183,12 @@ export default function Faq() {
                 )}
               </Disclosure>
 
-              <Disclosure as="div" className="mt-2">
+              <Disclosure as="div" className="my-4">
                 {({ open }) => (
                   <>
                     <Disclosure.Button
                       className={`${open ? 'border-b-[#F86CA7]' : ''
-                        } flex w-full justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
+                        } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
                     >
                       <span>Quanto tempo os planos ficam ativos?</span>
                       <ChevronUpIcon

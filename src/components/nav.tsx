@@ -1,15 +1,16 @@
-import Link from "next/link";
-import Image from "next/image";
+import { useEffect, useState } from "react"
+import Link from "next/link"
+import Image from "next/image"
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import logoImg from '../assets/alertapetlogo.svg'
 
 const navigation = [
-  { name: 'Por que a Alerta Pet?', href: '#whois', current: true },
-  { name: 'Como que funciona?', href: '#howworks', current: false },
-  { name: 'Planos e Preços', href: '#plans', current: false },
+  { name: 'Por que a Alerta Pet?', href: '#por-que-a-alerta-pet', current: true },
+  { name: 'Como que funciona?', href: '#como-que-funciona', current: false },
+  { name: 'Planos e Preços', href: '#planos-e-precos', current: false },
   { name: 'Tire suas Dúvidas', href: '#faq', current: false },
-  { name: 'Contato', href: '#contact', current: false },
+  { name: 'Contato', href: '#contato', current: false },
 ]
 
 function classNames(...classes: string[]) {
@@ -17,8 +18,25 @@ function classNames(...classes: string[]) {
 }
 
 export default function Nav() {
+  const [stickyClass, setStickyClass] = useState('static')
+
+  useEffect(() => {
+    window.addEventListener('scroll', stickNavbar)
+
+    return () => {
+      window.removeEventListener('scroll', stickNavbar)
+    }
+  }, [])
+
+  const stickNavbar = () => {
+    if (window !== undefined) {
+      let windowHeight = window.scrollY
+      windowHeight > 10 ? setStickyClass('bg-[#001D23] fixed top-0 left-0 z-50 shadow') : setStickyClass('static')
+    }
+  }
+
   return (
-    <Disclosure as="nav" className="bg-[#001D23]">
+    <Disclosure as="nav" className={classNames(`bg-[#001D23] fixed z-50 mx-auto w-full ${stickyClass}`)} >
       {({ open }) => (
         <>
           <div className="mx-auto w-11/12">
@@ -93,7 +111,8 @@ export default function Nav() {
             </div>
           </Disclosure.Panel>
         </>
-      )}
-    </Disclosure>
+      )
+      }
+    </Disclosure >
   )
 }

@@ -1,12 +1,12 @@
+import Link from "next/link";
 import Image from "next/image";
 import pataRImg from '../assets/section-vec-r1.svg'
 import pataLImg from '../assets/section-vec-l1.svg'
 import storyLImg from '../assets/story-img1.png'
-import Link from "next/link";
 
 export default function WhoIs() {
   return (
-    <div id="whois" className="mb-24">
+    <div id="como-que-funciona" className="mb-24">
       <div className="w-full px-3">
         <div className="flex flex-wrap justify-center w-11/12 mx-auto items-center">
           <div className="w-full sm:w-1/2">

@@ -5,7 +5,7 @@ import icon3ComoImg from '../assets/3.png'
 
 export default function HowWorks() {
   return (
-    <div id="howworks" className="bg-[url('../assets/feature-bg.png')] py-32 bg-no-repeat bg-cover text-white">
+    <div id="por-que-a-alerta-pet" className="bg-[url('../assets/feature-bg.png')] py-32 bg-no-repeat bg-cover text-white">
       <div className="w-full p-0">
         <div className="flex flex-wrap justify-center w-11/12 mx-auto items-center">
           <div className="mb-7">

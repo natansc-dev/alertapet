@@ -26,12 +26,12 @@ export default function Hero() {
               </div>
               <div className="w-full 2xl:w-6/12 flex items-center justify-center">
                 <div className="pt-12 mb-24 flex flex-col justify-center items-center min-w-[320px]">
-                  <div className="hidden sm:inline ml-0 mt-0 z-50">
+                  <div className="hidden sm:inline ml-0 mt-0 z-40">
                     <Image className="w-full" src={bannerImg} alt="" />
                   </div>
 
                   <div className="flex justify-center">
-                    <Link className="text-2xl text-white font-bold rounded-3xl relative py-2 px-7 bg-gradient-to-r from-[#F86CA7] to-[#FF7F18]" href="#plans">
+                    <Link className="text-2xl text-white font-bold rounded-3xl relative py-2 px-7 bg-gradient-to-r from-[#F86CA7] to-[#FF7F18]" href="#planos-e-precos">
                       Iniciar Buscas
                     </Link>
                   </div>
