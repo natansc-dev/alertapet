@@ -31,7 +31,7 @@ export default function Hero() {
                   </div>
 
                   <div className="flex justify-center">
-                    <Link className="text-2xl text-white font-bold rounded-3xl relative py-2 px-7 bg-gradient-to-r from-[#F86CA7] to-[#FF7F18]" href="#planos-e-precos">
+                    <Link className="text-2xl text-white font-bold rounded-3xl relative py-2 px-7 bg-gradient-to-r from-[#F86CA7] to-[#FF7F18]" href="/#planos-e-precos">
                       Iniciar Buscas
                     </Link>
                   </div>
