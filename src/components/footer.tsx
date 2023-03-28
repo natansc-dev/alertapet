@@ -17,7 +17,7 @@ export default function Footer() {
 
                 <div>
                   <h6>
-                    <a href="tel:+551900000000">+55 19 0 0000-000</a>
+                    <a href="tel:+551900000000">+55 (19) 9 8260-6755</a>
                   </h6>
                 </div>
               </div>
@@ -28,7 +28,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <h6>
-                    <a href="tel:+551900000000">contato@dominio.com.br</a>
+                    <a href="mailto:contato@alertapet.com">contato@alertapet.com</a>
                   </h6>
                 </div>
               </div>

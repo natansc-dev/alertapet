@@ -31,12 +31,12 @@ export default function Nav() {
   const stickNavbar = () => {
     if (window !== undefined) {
       let windowHeight = window.scrollY
-      windowHeight > 10 ? setStickyClass('bg-[#001D23] fixed top-0 left-0 z-50 shadow') : setStickyClass('static')
+      windowHeight > 100 ? setStickyClass('bg-[#001D23] fixed top-0 left-0 z-50 shadow') : setStickyClass('static')
     }
   }
 
   return (
-    <Disclosure as="nav" className={classNames(`bg-[#001D23] fixed z-50 mx-auto w-full ${stickyClass}`)} >
+    <Disclosure as="nav" className={classNames(`bg-[#001D23] z-50 mx-auto w-full ${stickyClass}`)} >
       {({ open }) => (
         <>
           <div className="mx-auto w-11/12">
