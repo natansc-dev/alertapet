@@ -5,19 +5,20 @@ import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import logoImg from '../assets/alertapetlogo.svg'
 
-const navigation = [
-  { name: 'Por que a Alerta Pet?', href: '#por-que-a-alerta-pet', current: true },
-  { name: 'Como que funciona?', href: '#como-que-funciona', current: false },
-  { name: 'Planos e Preços', href: '#planos-e-precos', current: false },
-  { name: 'Tire suas Dúvidas', href: '#faq', current: false },
-  { name: 'Contato', href: '#contato', current: false },
-]
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function Nav() {
+
+  const navigation = [
+    { name: 'Por que a Alerta Pet?', href: '/#por-que-a-alerta-pet', current: true },
+    { name: 'Como que funciona?', href: '/#como-que-funciona', current: false },
+    { name: 'Planos e Preços', href: '/#planos-e-precos', current: false },
+    { name: 'Tire suas Dúvidas', href: '/#faq', current: false },
+    { name: 'Contato', href: '/#contato', current: false },
+  ]
   const [stickyClass, setStickyClass] = useState('static')
 
   useEffect(() => {
