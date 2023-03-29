@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { GetStaticProps } from "next";
+import { ToastContainer } from 'react-toastify'
 import { stripe } from "@/lib/stripe";
 import Stripe from "stripe";
 import Nav from "@/components/nav";
@@ -50,6 +51,7 @@ export default function Home({ products }: HomeProps) {
         <meta name="theme-color" content="#ffffff" />
       </Head>
 
+      <ToastContainer />
       <Nav />
       <Hero />
       <VideoSection />

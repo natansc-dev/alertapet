@@ -5,11 +5,12 @@ import { Disclosure } from '@headlessui/react'
 import { ChevronUpIcon } from '@heroicons/react/20/solid'
 import { useRef } from "react"
 import emailjs from '@emailjs/browser'
+import { toast } from "react-toastify";
 
 export default function Faq() {
   const form = useRef<any>()
 
-  const sendEmail = (e: any) => {
+  function sendEmail(e: any) {
     e.preventDefault()
 
     emailjs.sendForm(
@@ -19,9 +20,9 @@ export default function Faq() {
       "user_EjfhmIzQ3tpR6cGoV5iMb"
     )
       .then((result) => {
-        console.log(result.text);
+        toast.success("Mensagem foi enviada com sucesso!");
       }, (error) => {
-        console.log(error.text);
+        toast.error("Ops... ocorreu um erro no envio, tente novamente.");
       });
   };
 
