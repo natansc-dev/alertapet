@@ -3,9 +3,28 @@ import pataRImg from '../assets/section-vec-r1.svg'
 import pataLImg from '../assets/section-vec-l1.svg'
 import { Disclosure } from '@headlessui/react'
 import { ChevronUpIcon } from '@heroicons/react/20/solid'
-
+import { useRef } from "react"
+import emailjs from '@emailjs/browser'
 
 export default function Faq() {
+  const form = useRef<any>()
+
+  const sendEmail = (e: any) => {
+    e.preventDefault()
+
+    emailjs.sendForm(
+      "service_x6u0e7k",
+      "template_5ngxwya",
+      form.current,
+      "user_EjfhmIzQ3tpR6cGoV5iMb"
+    )
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+  };
+
   return (
     <div id="faq" className="mb-24">
       <div className="w-full px-3">
@@ -206,7 +225,7 @@ export default function Faq() {
           </div>
 
           <div className="w-full">
-            <form action="#" method="POST" className="bg-white p-16 rounded-lg shadow-md mt-16 max-w-xl sm:mt-20">
+            <form ref={form} onSubmit={sendEmail} className="bg-white p-16 rounded-lg shadow-md mt-16 max-w-xl sm:mt-20">
               <div className="mx-auto max-w-2xl text-center mb-10">
                 <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Ainda tem alguma dúvida?</h2>
                 <p className="mt-2 text-lg leading-8 text-gray-600">
