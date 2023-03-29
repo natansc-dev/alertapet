@@ -86,7 +86,7 @@ export default function Plans({ products }: PlansProps) {
                     </li>
                   </ul>
                   <div className="mt-4 flex items-center justify-center">
-                    <Link href={`produto/${product.id}`} prefetch={false} className="text-xl sm:text-2xl text-white font-bold rounded-3xl relative py-2 px-7 bg-gradient-to-r from-[#F86CA7] to-[#FF7F18]">
+                    <Link href={`produto/${product.id}`} prefetch={false} className="text-xl sm:text-2xl text-white font-bold rounded-3xl relative py-2 px-7 bg-gradient-to-r from-[#F86CA7] to-[#FF7F18] transition-all hover:rounded-md">
                       Iniciar Buscas
                     </Link>
                   </div>

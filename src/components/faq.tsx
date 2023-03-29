@@ -296,7 +296,7 @@ export default function Faq() {
               <div className="mt-6">
                 <button
                   type="submit"
-                  className="text-2xl text-white font-bold rounded-3xl relative py-2 px-7 bg-gradient-to-r from-[#F86CA7] to-[#FF7F18]"
+                  className="text-2xl text-white font-bold rounded-3xl relative py-2 px-7 bg-gradient-to-r from-[#F86CA7] to-[#FF7F18] transition-all hover:rounded-md"
                 >
                   Enviar
                 </button>

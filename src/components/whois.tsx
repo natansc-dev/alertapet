@@ -25,7 +25,7 @@ export default function WhoIs() {
                 <h3 className="text-2xl font-medium">Encontre seu melhor amigo! Com o serviço de anunciar seu pet desaparecido para que ele possa voltar para casa.</h3>
               </div>
               <div className="flex justify-center sm:justify-start">
-                <Link className="text-2xl text-white font-bold rounded-3xl relative py-2 px-7 bg-gradient-to-r from-[#F86CA7] to-[#FF7F18]" href="#plans">
+                <Link className="text-2xl text-white font-bold rounded-3xl relative py-2 px-7 bg-gradient-to-r from-[#F86CA7] to-[#FF7F18] transition-all hover:rounded-md" href="#plans">
                   Encontrar meu pet
                 </Link>
               </div>
