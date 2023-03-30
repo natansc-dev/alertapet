@@ -12,6 +12,7 @@ import Statistics from "@/components/statistics";
 import Plans from "@/components/plans";
 import Faq from "@/components/faq";
 import Footer from "@/components/footer";
+import WhatsApp from "@/components/whatsapp";
 interface HomeProps {
   products: {
     id: string,
@@ -61,6 +62,7 @@ export default function Home({ products }: HomeProps) {
       <Plans products={products} />
       <Faq />
       <Footer />
+      <WhatsApp />
     </>
   )
 }
