@@ -10,9 +10,11 @@ interface PlansProps {
     id: string,
     name: string,
     price: string
+    available: boolean
   }[]
 }
 export default function Plans({ products }: PlansProps) {
+  const productsFilted = products.filter((product) => product.available === true)
   return (
     <div id="planos-e-precos" className="mb-20">
       <div className="w-11/12 mx-auto">
@@ -30,9 +32,8 @@ export default function Plans({ products }: PlansProps) {
         </div>
 
         <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-5">
-          {products.map((product) => {
+          {productsFilted.map((product) => {
             return (
-
               <div key={product.id} className="border-2 border-[transparent] hover:shadow-lg hover:border-2 hover:border-[#F86CA7] w-11/12 sm:w-4/12 bg-white rounded-lg shadow-sm p-11">
                 <div className="pricing-card">
                   <div className="text-center mb-4">
