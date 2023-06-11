@@ -7,9 +7,9 @@ export default function HowWorks() {
   return (
     <div id="por-que-a-alerta-pet" className="bg-[url('../assets/feature-bg.png')] py-32 bg-no-repeat bg-cover text-white">
       <div className="w-full p-0">
-        <div className="flex flex-wrap justify-center w-11/12 mx-auto items-center">
+        <div className="flex flex-wrap gap-6 justify-center w-11/12 mx-auto items-center">
           <div className="mb-7">
-            <h2 className="font-bold text-5xl sm:text-center">Como que isso<br />funciona?</h2>
+            <h2 className="font-bold text-5xl sm:text-left text-center ">Como que isso<br />funciona?</h2>
           </div>
 
           <div className="gap-4 flex flex-col sm:flex-row items-center justify-center">

@@ -29,7 +29,7 @@ export default function Faq() {
   return (
     <div id="faq" className="mb-24">
       <div className="w-full px-3">
-        <div className="flex justify-center w-11/12 mx-auto items-center gap-16">
+        <div className="flex flex-col sm:flex-row justify-center w-11/12 mx-auto items-center gap-16">
           <div className="w-full">
             <div className="mb-5">
               <span className="flex relative items-center mb-2 text-xl font-medium">
@@ -47,14 +47,15 @@ export default function Faq() {
                   <>
                     <Disclosure.Button
                       className={`${open ? 'border-b-[#F86CA7]' : ''
-                        } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
+                        } flex items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold w-full`}
                     >
-                      <span>O que é Alerta Pet?</span>
+                      <span className="w-4/5">O que é Alerta Pet?</span>
                       <ChevronUpIcon
                         className={`${open ? 'rotate-180 transform' : ''
                           } h-[20px] w-[20px]`}
                       />
                     </Disclosure.Button>
+
                     <Disclosure.Panel className="px-4 pt-4 pb-2 text-lg text-black">
                       O Alerta Pet é um serviço de difusão que ajuda encontrar os animais de estimação perdidos através de publicidade.
                     </Disclosure.Panel>
@@ -69,12 +70,13 @@ export default function Faq() {
                       className={`${open ? 'border-b-[#F86CA7]' : ''
                         } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
                     >
-                      <span>Como funciona?</span>
+                      <span className="w-4/5">Como funciona?</span>
                       <ChevronUpIcon
                         className={`${open ? 'rotate-180 transform' : ''
                           } h-[20px] w-[20px]`}
                       />
                     </Disclosure.Button>
+                    
                     <Disclosure.Panel className="px-4 pt-4 pb-2 text-lg text-black">
                       Utilizamos a mesma publicidade que as grandes empresas usam para promover seus produtos e serviços nas redes sociais, criando um anúncio com fotos e informações do seu pet a serem publicadas em todas as plataformas. Estima-se que quase 80% dos usuários das redes sociais acessam as mídias digitais todos os dias, com isso, conseguimos atingir milhares de pessoas que estão próximas do local onde ele se perdeu, sendo uma forma mais ágil e rápida para encontrar seu pet.
                     </Disclosure.Panel>
@@ -89,13 +91,14 @@ export default function Faq() {
                       className={`${open ? 'border-b-[#F86CA7]' : ''
                         } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left gap-3 font-semibold`}
                     >
-                      <span className="w-10/12">Qual é a diferença de uma publicação feita com o Alerta Pet e de outras publicações?</span>
+                      <span className="w-4/5">Qual é a diferença de uma publicação feita com o Alerta Pet e de outras publicações?</span>
 
                       <ChevronUpIcon
                         className={`${open ? 'rotate-180 transform' : ''
                           } h-[20px] w-[20px]`}
                       />
                     </Disclosure.Button>
+
                     <Disclosure.Panel className="px-4 pt-4 pb-2 text-lg text-black">
                       As publicações feitas com o Alerta Pet são promovidas através de publicidade para que apareçam no feed das pessoas que moram próximas a um determinado local.
                     </Disclosure.Panel>
@@ -110,7 +113,7 @@ export default function Faq() {
                       className={`${open ? 'border-b-[#F86CA7]' : ''
                         } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
                     >
-                      <span>Quais são as vantagens?</span>
+                      <span className="w-4/5">Quais são as vantagens?</span>
                       <ChevronUpIcon
                         className={`${open ? 'rotate-180 transform' : ''
                           } h-[20px] w-[20px]`}
@@ -130,7 +133,7 @@ export default function Faq() {
                       className={`${open ? 'border-b-[#F86CA7]' : ''
                         } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
                     >
-                      <span>Como eu sei que o anúncio foi realizado?</span>
+                      <span className="w-4/5">Como eu sei que o anúncio foi realizado?</span>
                       <ChevronUpIcon
                         className={`${open ? 'rotate-180 transform' : ''
                           } h-[20px] w-[20px]`}
@@ -150,7 +153,7 @@ export default function Faq() {
                       className={`${open ? 'border-b-[#F86CA7]' : ''
                         } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
                     >
-                      <span>O que acontece após pagar?</span>
+                      <span className="w-4/5">O que acontece após pagar?</span>
                       <ChevronUpIcon
                         className={`${open ? 'rotate-180 transform' : ''
                           } h-[20px] w-[20px]`}
@@ -170,7 +173,7 @@ export default function Faq() {
                       className={`${open ? 'border-b-[#F86CA7]' : ''
                         } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
                     >
-                      <span>Quem faz a publicação?</span>
+                      <span className="w-4/5">Quem faz a publicação?</span>
                       <ChevronUpIcon
                         className={`${open ? 'rotate-180 transform' : ''
                           } h-[20px] w-[20px]`}
@@ -190,7 +193,7 @@ export default function Faq() {
                       className={`${open ? 'border-b-[#F86CA7]' : ''
                         } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
                     >
-                      <span>Vocês garantem que meu pet será encontrado?</span>
+                      <span className="w-4/5">Vocês garantem que meu pet será encontrado?</span>
                       <ChevronUpIcon
                         className={`${open ? 'rotate-180 transform' : ''
                           } h-[20px] w-[20px]`}
@@ -210,7 +213,7 @@ export default function Faq() {
                       className={`${open ? 'border-b-[#F86CA7]' : ''
                         } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
                     >
-                      <span>Quanto tempo os planos ficam ativos?</span>
+                      <span className="w-4/5">Quanto tempo os planos ficam ativos?</span>
                       <ChevronUpIcon
                         className={`${open ? 'rotate-180 transform' : ''
                           } h-[20px] w-[20px]`}
@@ -226,7 +229,7 @@ export default function Faq() {
           </div>
 
           <div className="w-full">
-            <form ref={form} onSubmit={sendEmail} className="bg-white p-16 rounded-lg shadow-md mt-16 max-w-xl sm:mt-20">
+            <form ref={form} onSubmit={sendEmail} className="bg-white p-6 sm:p-11 rounded-lg shadow-md mt-16 max-w-xl sm:mt-20">
               <div className="mx-auto max-w-2xl text-center mb-10">
                 <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Ainda tem alguma dúvida?</h2>
                 <p className="mt-2 text-lg leading-8 text-gray-600">
