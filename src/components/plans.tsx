@@ -60,6 +60,7 @@ export default function Plans({ products }: PlansProps) {
                       {product.name === 'Pet Bronze' && 'Duração de 14 dias'}
                       {product.name === 'Pet Ouro' && 'Duração de 30 dias'}
                     </li>
+
                     <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
                       {product.name === 'Pet Prata' &&
                         'Raio de Alcance de até 3 km'}
@@ -69,6 +70,7 @@ export default function Plans({ products }: PlansProps) {
                         'Raio de Alcance de até 8 km'}
                       <Image src={checkImg} alt="" width={16} height={14} />
                     </li>
+
                     <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
                       {product.name === 'Pet Prata' &&
                         'Pode atingir 6.000 à 10.000 pessoas'}
@@ -78,10 +80,12 @@ export default function Plans({ products }: PlansProps) {
                         'Pode atingir 20.000 à 50.000 pessoas'}
                       <Image src={checkImg} alt="" width={16} height={14} />
                     </li>
+
                     <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
                       Cartaz QR Code
                       <Image src={checkImg} alt="" width={16} height={14} />
                     </li>
+
                     <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
                       Publicação Instagram
                       {product.name === 'Pet Prata' ? (
@@ -90,6 +94,7 @@ export default function Plans({ products }: PlansProps) {
                         <Image src={checkImg} alt="" width={16} height={14} />
                       )}
                     </li>
+
                     <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
                       Publicação nos Grupos da Cidade e Região
                       {product.name === 'Pet Prata' ? (
@@ -99,6 +104,7 @@ export default function Plans({ products }: PlansProps) {
                       )}
                     </li>
                   </ul>
+
                   <div className="mt-4 flex items-center justify-center">
                     <Link
                       href={`produto/${product.id}`}
