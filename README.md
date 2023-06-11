@@ -8,6 +8,11 @@
 
 <br>
 
+## 🎥 Projeto Publicado
+Esse projeto pode ser visualizado através do seguinte link:
+- Domínio: <a href="https://www.alertapet.com/" target="_blank">alertapet.com</a>
+- Vercel: <a href="https://alertapet.vercel.app/" target="_blank">alertapet.vercel.app</a>
+
 ## 🧪 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
@@ -41,6 +46,6 @@ O app estará disponível no seu browser pelo endereço http://localhost:3000.
 
 ## 💻 Projeto
 
-To do foi criado com o objetivo de auxiliar o usuário com as tarefas e atividades do dia-a-dia, de uma forma simples e amigável de interação. Atualmente o App, armazena os dados no firebase (Realtime Database), em breve farei mais atualizações.
+A Alerta Pet foi criada com o objetivo de ajudar a encontrar animais perdidos através de Tráfego Pago.
 
 Feito com 💜 por Natan Cardoso 👋🏻.

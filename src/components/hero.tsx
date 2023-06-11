@@ -30,7 +30,7 @@ export default function Hero() {
                 </div>
               </div>
               <div className="w-full 2xl:w-6/12 flex items-center justify-center">
-                <div className="pt-12 mb-24 flex flex-col justify-center items-center min-w-[320px]">
+                <div className="mb-24 flex flex-col justify-center items-center min-w-[320px]">
                   <div className="hidden sm:inline ml-0 mt-0 z-40">
                     <Image className="w-full" src={bannerImg} alt="" />
                   </div>
