@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image'
 import icon1NumberImg from '../assets/icon1.png'
 import icon2NumberImg from '../assets/icon2.png'
 import icon3NumberImg from '../assets/icon3.png'
@@ -16,7 +16,9 @@ export default function Statistics() {
               </div>
               <div>
                 <div className="flex items-center gap-1">
-                  <h3 className="text-5xl font-bold spacing tracking-widest">237</h3>
+                  <h3 className="text-5xl font-bold spacing tracking-widest">
+                    237
+                  </h3>
                   <span className="text-5xl font-bold">+</span>
                 </div>
                 <p className="text-lg">Clientes</p>
@@ -31,7 +33,9 @@ export default function Statistics() {
               </div>
               <div>
                 <div className="flex items-center gap-1">
-                  <h3 className="text-5xl font-bold spacing tracking-widest">300</h3>
+                  <h3 className="text-5xl font-bold spacing tracking-widest">
+                    300
+                  </h3>
                   <span className="text-5xl font-bold">+</span>
                 </div>
                 <p className="text-lg">Pet resgatados</p>
@@ -46,7 +50,9 @@ export default function Statistics() {
               </div>
               <div>
                 <div className="flex items-center gap-1">
-                  <h3 className="text-5xl font-bold spacing tracking-widest">400</h3>
+                  <h3 className="text-5xl font-bold spacing tracking-widest">
+                    400
+                  </h3>
                   <span className="text-5xl font-bold">+</span>
                 </div>
                 <p className="text-lg">Anuncios</p>
@@ -61,7 +67,9 @@ export default function Statistics() {
               </div>
               <div>
                 <div className="flex items-center gap-1">
-                  <h3 className="text-5xl font-bold spacing tracking-widest">2</h3>
+                  <h3 className="text-5xl font-bold spacing tracking-widest">
+                    2
+                  </h3>
                   <span className="text-5xl font-bold">+</span>
                 </div>
                 <p className="text-lg">Anos de experiencia</p>

@@ -1,5 +1,5 @@
-import Image from "next/image"
-import Link from "next/link"
+import Image from 'next/image'
+import Link from 'next/link'
 import pataRImg from '../assets/section-vec-r1.svg'
 import pataLImg from '../assets/section-vec-l1.svg'
 import checkImg from '../assets/pricing-check.svg'
@@ -7,14 +7,16 @@ import xImg from '../assets/pricing-X.svg'
 
 interface PlansProps {
   products: {
-    id: string,
-    name: string,
+    id: string
+    name: string
     price: string
     available: boolean
   }[]
 }
 export default function Plans({ products }: PlansProps) {
-  const productsFilted = products.filter((product) => product.available === true)
+  const productsFilted = products.filter(
+    (product) => product.available === true,
+  )
   return (
     <div id="planos-e-precos" className="mb-20">
       <div className="w-11/12 mx-auto">
@@ -34,7 +36,10 @@ export default function Plans({ products }: PlansProps) {
         <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-5">
           {productsFilted.map((product) => {
             return (
-              <div key={product.id} className="border-2 border-[transparent] hover:shadow-lg hover:border-2 hover:border-[#F86CA7] w-11/12 sm:w-4/12 bg-white rounded-lg shadow-sm p-6 sm:p-11">
+              <div
+                key={product.id}
+                className="border-2 border-[transparent] hover:shadow-lg hover:border-2 hover:border-[#F86CA7] w-11/12 sm:w-4/12 bg-white rounded-lg shadow-sm p-6 sm:p-11"
+              >
                 <div className="pricing-card">
                   <div className="text-center mb-4">
                     <h4 className="text-2xl font-semibold mb-1">
@@ -42,27 +47,35 @@ export default function Plans({ products }: PlansProps) {
                     </h4>
 
                     <h2 className="flex justify-center items-center sm:text-6xl text-5xl mb-1 font-bold">
-                      <span className="-mt-[24px] inline-block mr-1 text-lg">R$</span>
+                      <span className="-mt-[24px] inline-block mr-1 text-lg">
+                        R$
+                      </span>
                       {product.price.replace('R$', '')}
                     </h2>
                   </div>
 
                   <ul>
                     <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
-                      {product.name === 'Pet Prata' && ("Duração de 7 dias")}
-                      {product.name === 'Pet Bronze' && ("Duração de 14 dias")}
-                      {product.name === 'Pet Ouro' && ("Duração de 30 dias")}
+                      {product.name === 'Pet Prata' && 'Duração de 7 dias'}
+                      {product.name === 'Pet Bronze' && 'Duração de 14 dias'}
+                      {product.name === 'Pet Ouro' && 'Duração de 30 dias'}
                     </li>
                     <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
-                      {product.name === 'Pet Prata' && ("Raio de Alcance de até 3 km")}
-                      {product.name === 'Pet Bronze' && ("Raio de Alcance de até 5 km")}
-                      {product.name === 'Pet Ouro' && ("Raio de Alcance de até 8 km")}
+                      {product.name === 'Pet Prata' &&
+                        'Raio de Alcance de até 3 km'}
+                      {product.name === 'Pet Bronze' &&
+                        'Raio de Alcance de até 5 km'}
+                      {product.name === 'Pet Ouro' &&
+                        'Raio de Alcance de até 8 km'}
                       <Image src={checkImg} alt="" width={16} height={14} />
                     </li>
                     <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
-                      {product.name === 'Pet Prata' && ("Pode atingir 6.000 à 10.000 pessoas")}
-                      {product.name === 'Pet Bronze' && ("Pode atingir 10.000 à 20.000 pessoas")}
-                      {product.name === 'Pet Ouro' && ("Pode atingir 20.000 à 50.000 pessoas")}
+                      {product.name === 'Pet Prata' &&
+                        'Pode atingir 6.000 à 10.000 pessoas'}
+                      {product.name === 'Pet Bronze' &&
+                        'Pode atingir 10.000 à 20.000 pessoas'}
+                      {product.name === 'Pet Ouro' &&
+                        'Pode atingir 20.000 à 50.000 pessoas'}
                       <Image src={checkImg} alt="" width={16} height={14} />
                     </li>
                     <li className="flex items-center justify-between border-b-[1px] py-4 font-normal text-base">
@@ -87,7 +100,11 @@ export default function Plans({ products }: PlansProps) {
                     </li>
                   </ul>
                   <div className="mt-4 flex items-center justify-center">
-                    <Link href={`produto/${product.id}`} prefetch={false} className="text-xl sm:text-2xl text-white font-bold rounded-3xl relative py-2 px-7 bg-gradient-to-r from-[#F86CA7] to-[#FF7F18] transition-all hover:rounded-md">
+                    <Link
+                      href={`produto/${product.id}`}
+                      prefetch={false}
+                      className="text-xl sm:text-2xl text-white font-bold rounded-3xl relative py-2 px-7 bg-gradient-to-r from-[#F86CA7] to-[#FF7F18] transition-all hover:rounded-md"
+                    >
                       Iniciar Buscas
                     </Link>
                   </div>

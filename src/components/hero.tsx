@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image'
+import Link from 'next/link'
 import bannerImg from '../assets/new-banner-img.png'
 
 export default function Hero() {
@@ -19,8 +19,13 @@ export default function Hero() {
                     </ul>
                   </div>
                   <h1 className="md:text-[2.5rem] text-4xl sm:text-6xl text-center font-extrabold mb-0 md:text-left">
-                    <p className="mb-6">Não desista de encontrar seu melhor amigo!</p>
-                    <p className="text-3xl">Anuncie seu pet desaparecido e aumente as chances de reencontrá-lo com nossos serviços.</p>
+                    <p className="mb-6">
+                      Não desista de encontrar seu melhor amigo!
+                    </p>
+                    <p className="text-3xl">
+                      Anuncie seu pet desaparecido e aumente as chances de
+                      reencontrá-lo com nossos serviços.
+                    </p>
                   </h1>
                 </div>
               </div>
@@ -31,7 +36,10 @@ export default function Hero() {
                   </div>
 
                   <div className="flex justify-center">
-                    <Link className="text-2xl text-white font-bold rounded-3xl relative py-2 px-7 bg-gradient-to-r from-[#F86CA7] to-[#FF7F18] transition-all hover:rounded-md" href="/#planos-e-precos">
+                    <Link
+                      className="text-2xl text-white font-bold rounded-3xl relative py-2 px-7 bg-gradient-to-r from-[#F86CA7] to-[#FF7F18] transition-all hover:rounded-md"
+                      href="/#planos-e-precos"
+                    >
                       Iniciar Buscas
                     </Link>
                   </div>

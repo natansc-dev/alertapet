@@ -4,8 +4,14 @@ export default function VideoSection() {
       <div className="w-full">
         <div className="row justify-center">
           <div className="w-11/12 mx-auto flex justify-center">
-            <video autoPlay loop muted preload="auto" className="border-8 border-white">
-              <source src='/video-02.mp4' type="video/mp4" />
+            <video
+              autoPlay
+              loop
+              muted
+              preload="auto"
+              className="border-8 border-white"
+            >
+              <source src="/video-02.mp4" type="video/mp4" />
             </video>
           </div>
         </div>

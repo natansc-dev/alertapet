@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react"
-import Link from "next/link"
-import Image from "next/image"
+import { useEffect, useState } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import logoImg from '../assets/alertapetlogo.svg'
-
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
@@ -12,13 +11,17 @@ function classNames(...classes: string[]) {
 
 export default function Nav() {
   const navigation = [
-    { name: 'Por que a Alerta Pet?', href: '/#por-que-a-alerta-pet', current: true },
+    {
+      name: 'Por que a Alerta Pet?',
+      href: '/#por-que-a-alerta-pet',
+      current: true,
+    },
     { name: 'Como que funciona?', href: '/#como-que-funciona', current: false },
     { name: 'Planos e Preços', href: '/#planos-e-precos', current: false },
     { name: 'Tire suas Dúvidas', href: '/#faq', current: false },
     { name: 'Contato', href: '/#contato', current: false },
   ]
-  
+
   const [stickyClass, setStickyClass] = useState('static')
 
   useEffect(() => {
@@ -31,19 +34,24 @@ export default function Nav() {
 
   const stickNavbar = () => {
     if (window !== undefined) {
-      let windowHeight = window.scrollY
-      windowHeight > 100 ? setStickyClass('bg-[#001D23] fixed top-0 left-0 z-50 shadow') : setStickyClass('static')
+      const windowHeight = window.scrollY
+      windowHeight > 100
+        ? setStickyClass('bg-[#001D23] fixed top-0 left-0 z-50 shadow')
+        : setStickyClass('static')
     }
   }
 
   return (
-    <Disclosure as="nav" className={classNames(`bg-[#001D23] z-50 mx-auto w-full ${stickyClass}`)} >
+    <Disclosure
+      as="nav"
+      className={classNames(`bg-[#001D23] z-50 mx-auto w-full ${stickyClass}`)}
+    >
       {({ open }) => (
         <>
           <div className="mx-auto w-11/12">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
-                {/* Mobile menu button*/}
+                {/* Mobile menu button */}
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
@@ -78,8 +86,10 @@ export default function Nav() {
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'rounded-md px-3 py-2 text-sm font-medium'
+                          item.current
+                            ? 'bg-gray-900 text-white'
+                            : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                          'rounded-md px-3 py-2 text-sm font-medium',
                         )}
                         aria-current={item.current ? 'page' : undefined}
                       >
@@ -89,7 +99,6 @@ export default function Nav() {
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
 
@@ -101,8 +110,10 @@ export default function Nav() {
                   as="a"
                   href={item.href}
                   className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'block rounded-md px-3 py-2 text-base font-medium'
+                    item.current
+                      ? 'bg-gray-900 text-white'
+                      : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                    'block rounded-md px-3 py-2 text-base font-medium',
                   )}
                   aria-current={item.current ? 'page' : undefined}
                 >
@@ -112,8 +123,7 @@ export default function Nav() {
             </div>
           </Disclosure.Panel>
         </>
-      )
-      }
-    </Disclosure >
+      )}
+    </Disclosure>
   )
 }

@@ -1,11 +1,11 @@
-import Image from "next/image";
+import Image from 'next/image'
 import pataRImg from '../assets/section-vec-r1.svg'
 import pataLImg from '../assets/section-vec-l1.svg'
 import { Disclosure } from '@headlessui/react'
 import { ChevronUpIcon } from '@heroicons/react/20/solid'
-import { useRef } from "react"
+import { useRef } from 'react'
 import emailjs from '@emailjs/browser'
-import { toast } from "react-toastify";
+import { toast } from 'react-toastify'
 
 export default function Faq() {
   const form = useRef<any>()
@@ -13,18 +13,22 @@ export default function Faq() {
   function sendEmail(e: any) {
     e.preventDefault()
 
-    emailjs.sendForm(
-      "service_x6u0e7k",
-      "template_5ngxwya",
-      form.current,
-      "user_EjfhmIzQ3tpR6cGoV5iMb"
-    )
-      .then((result) => {
-        toast.success("Mensagem foi enviada com sucesso!");
-      }, (error) => {
-        toast.error("Ops... ocorreu um erro no envio, tente novamente.");
-      });
-  };
+    emailjs
+      .sendForm(
+        'service_x6u0e7k',
+        'template_5ngxwya',
+        form.current,
+        'user_EjfhmIzQ3tpR6cGoV5iMb',
+      )
+      .then(
+        () => {
+          toast.success('Mensagem foi enviada com sucesso!')
+        },
+        () => {
+          toast.error('Ops... ocorreu um erro no envio, tente novamente.')
+        },
+      )
+  }
 
   return (
     <div id="faq" className="mb-24">
@@ -46,18 +50,21 @@ export default function Faq() {
                 {({ open }) => (
                   <>
                     <Disclosure.Button
-                      className={`${open ? 'border-b-[#F86CA7]' : ''
-                        } flex items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold w-full`}
+                      className={`${
+                        open ? 'border-b-[#F86CA7]' : ''
+                      } flex items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold w-full`}
                     >
                       <span className="w-4/5">O que é Alerta Pet?</span>
                       <ChevronUpIcon
-                        className={`${open ? 'rotate-180 transform' : ''
-                          } h-[20px] w-[20px]`}
+                        className={`${
+                          open ? 'rotate-180 transform' : ''
+                        } h-[20px] w-[20px]`}
                       />
                     </Disclosure.Button>
 
                     <Disclosure.Panel className="px-4 pt-4 pb-2 text-lg text-black">
-                      O Alerta Pet é um serviço de difusão que ajuda encontrar os animais de estimação perdidos através de publicidade.
+                      O Alerta Pet é um serviço de difusão que ajuda encontrar
+                      os animais de estimação perdidos através de publicidade.
                     </Disclosure.Panel>
                   </>
                 )}
@@ -67,18 +74,28 @@ export default function Faq() {
                 {({ open }) => (
                   <>
                     <Disclosure.Button
-                      className={`${open ? 'border-b-[#F86CA7]' : ''
-                        } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
+                      className={`${
+                        open ? 'border-b-[#F86CA7]' : ''
+                      } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
                     >
                       <span className="w-4/5">Como funciona?</span>
                       <ChevronUpIcon
-                        className={`${open ? 'rotate-180 transform' : ''
-                          } h-[20px] w-[20px]`}
+                        className={`${
+                          open ? 'rotate-180 transform' : ''
+                        } h-[20px] w-[20px]`}
                       />
                     </Disclosure.Button>
-                    
+
                     <Disclosure.Panel className="px-4 pt-4 pb-2 text-lg text-black">
-                      Utilizamos a mesma publicidade que as grandes empresas usam para promover seus produtos e serviços nas redes sociais, criando um anúncio com fotos e informações do seu pet a serem publicadas em todas as plataformas. Estima-se que quase 80% dos usuários das redes sociais acessam as mídias digitais todos os dias, com isso, conseguimos atingir milhares de pessoas que estão próximas do local onde ele se perdeu, sendo uma forma mais ágil e rápida para encontrar seu pet.
+                      Utilizamos a mesma publicidade que as grandes empresas
+                      usam para promover seus produtos e serviços nas redes
+                      sociais, criando um anúncio com fotos e informações do seu
+                      pet a serem publicadas em todas as plataformas. Estima-se
+                      que quase 80% dos usuários das redes sociais acessam as
+                      mídias digitais todos os dias, com isso, conseguimos
+                      atingir milhares de pessoas que estão próximas do local
+                      onde ele se perdeu, sendo uma forma mais ágil e rápida
+                      para encontrar seu pet.
                     </Disclosure.Panel>
                   </>
                 )}
@@ -88,19 +105,26 @@ export default function Faq() {
                 {({ open }) => (
                   <>
                     <Disclosure.Button
-                      className={`${open ? 'border-b-[#F86CA7]' : ''
-                        } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left gap-3 font-semibold`}
+                      className={`${
+                        open ? 'border-b-[#F86CA7]' : ''
+                      } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left gap-3 font-semibold`}
                     >
-                      <span className="w-4/5">Qual é a diferença de uma publicação feita com o Alerta Pet e de outras publicações?</span>
+                      <span className="w-4/5">
+                        Qual é a diferença de uma publicação feita com o Alerta
+                        Pet e de outras publicações?
+                      </span>
 
                       <ChevronUpIcon
-                        className={`${open ? 'rotate-180 transform' : ''
-                          } h-[20px] w-[20px]`}
+                        className={`${
+                          open ? 'rotate-180 transform' : ''
+                        } h-[20px] w-[20px]`}
                       />
                     </Disclosure.Button>
 
                     <Disclosure.Panel className="px-4 pt-4 pb-2 text-lg text-black">
-                      As publicações feitas com o Alerta Pet são promovidas através de publicidade para que apareçam no feed das pessoas que moram próximas a um determinado local.
+                      As publicações feitas com o Alerta Pet são promovidas
+                      através de publicidade para que apareçam no feed das
+                      pessoas que moram próximas a um determinado local.
                     </Disclosure.Panel>
                   </>
                 )}
@@ -110,17 +134,21 @@ export default function Faq() {
                 {({ open }) => (
                   <>
                     <Disclosure.Button
-                      className={`${open ? 'border-b-[#F86CA7]' : ''
-                        } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
+                      className={`${
+                        open ? 'border-b-[#F86CA7]' : ''
+                      } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
                     >
                       <span className="w-4/5">Quais são as vantagens?</span>
                       <ChevronUpIcon
-                        className={`${open ? 'rotate-180 transform' : ''
-                          } h-[20px] w-[20px]`}
+                        className={`${
+                          open ? 'rotate-180 transform' : ''
+                        } h-[20px] w-[20px]`}
                       />
                     </Disclosure.Button>
                     <Disclosure.Panel className="px-4 pt-4 pb-2 text-lg text-black">
-                      Alcançar milhares de pessoas perto do local onde o pet sumiu, sem que elas participem de grupos ou sigam páginas sobre animais desaparecidos.
+                      Alcançar milhares de pessoas perto do local onde o pet
+                      sumiu, sem que elas participem de grupos ou sigam páginas
+                      sobre animais desaparecidos.
                     </Disclosure.Panel>
                   </>
                 )}
@@ -130,17 +158,24 @@ export default function Faq() {
                 {({ open }) => (
                   <>
                     <Disclosure.Button
-                      className={`${open ? 'border-b-[#F86CA7]' : ''
-                        } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
+                      className={`${
+                        open ? 'border-b-[#F86CA7]' : ''
+                      } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
                     >
-                      <span className="w-4/5">Como eu sei que o anúncio foi realizado?</span>
+                      <span className="w-4/5">
+                        Como eu sei que o anúncio foi realizado?
+                      </span>
                       <ChevronUpIcon
-                        className={`${open ? 'rotate-180 transform' : ''
-                          } h-[20px] w-[20px]`}
+                        className={`${
+                          open ? 'rotate-180 transform' : ''
+                        } h-[20px] w-[20px]`}
                       />
                     </Disclosure.Button>
                     <Disclosure.Panel className="px-4 pt-4 pb-2 text-lg text-black">
-                      Assim que o Plano for contratado, entraremos em contato para iniciar o processo de criação e publicação do post o mais rápido possível, a fim de não perder tempo e agilizar a procura do seu pet.
+                      Assim que o Plano for contratado, entraremos em contato
+                      para iniciar o processo de criação e publicação do post o
+                      mais rápido possível, a fim de não perder tempo e agilizar
+                      a procura do seu pet.
                     </Disclosure.Panel>
                   </>
                 )}
@@ -150,17 +185,21 @@ export default function Faq() {
                 {({ open }) => (
                   <>
                     <Disclosure.Button
-                      className={`${open ? 'border-b-[#F86CA7]' : ''
-                        } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
+                      className={`${
+                        open ? 'border-b-[#F86CA7]' : ''
+                      } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
                     >
                       <span className="w-4/5">O que acontece após pagar?</span>
                       <ChevronUpIcon
-                        className={`${open ? 'rotate-180 transform' : ''
-                          } h-[20px] w-[20px]`}
+                        className={`${
+                          open ? 'rotate-180 transform' : ''
+                        } h-[20px] w-[20px]`}
                       />
                     </Disclosure.Button>
                     <Disclosure.Panel className="px-4 pt-4 pb-2 text-lg text-black">
-                      Nós nos encarregaremos de fazer a publicação na fan page do Alerta Pet e de promove-la posteriormente na área onde seu ente querido desapareceu.
+                      Nós nos encarregaremos de fazer a publicação na fan page
+                      do Alerta Pet e de promove-la posteriormente na área onde
+                      seu ente querido desapareceu.
                     </Disclosure.Panel>
                   </>
                 )}
@@ -170,17 +209,23 @@ export default function Faq() {
                 {({ open }) => (
                   <>
                     <Disclosure.Button
-                      className={`${open ? 'border-b-[#F86CA7]' : ''
-                        } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
+                      className={`${
+                        open ? 'border-b-[#F86CA7]' : ''
+                      } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
                     >
                       <span className="w-4/5">Quem faz a publicação?</span>
                       <ChevronUpIcon
-                        className={`${open ? 'rotate-180 transform' : ''
-                          } h-[20px] w-[20px]`}
+                        className={`${
+                          open ? 'rotate-180 transform' : ''
+                        } h-[20px] w-[20px]`}
                       />
                     </Disclosure.Button>
                     <Disclosure.Panel className="px-4 pt-4 pb-2 text-lg text-black">
-                      Nós nos encarregaremos de fazer a publicação na fan page do Alerta Pet e de promove-la posteriormente o Facebook utiliza a informação dos GPS, das redes móveis e das redes WiFi para determinar a localização em que as pessoas utilizam o aplicativo.
+                      Nós nos encarregaremos de fazer a publicação na fan page
+                      do Alerta Pet e de promove-la posteriormente o Facebook
+                      utiliza a informação dos GPS, das redes móveis e das redes
+                      WiFi para determinar a localização em que as pessoas
+                      utilizam o aplicativo.
                     </Disclosure.Panel>
                   </>
                 )}
@@ -190,17 +235,24 @@ export default function Faq() {
                 {({ open }) => (
                   <>
                     <Disclosure.Button
-                      className={`${open ? 'border-b-[#F86CA7]' : ''
-                        } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
+                      className={`${
+                        open ? 'border-b-[#F86CA7]' : ''
+                      } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
                     >
-                      <span className="w-4/5">Vocês garantem que meu pet será encontrado?</span>
+                      <span className="w-4/5">
+                        Vocês garantem que meu pet será encontrado?
+                      </span>
                       <ChevronUpIcon
-                        className={`${open ? 'rotate-180 transform' : ''
-                          } h-[20px] w-[20px]`}
+                        className={`${
+                          open ? 'rotate-180 transform' : ''
+                        } h-[20px] w-[20px]`}
                       />
                     </Disclosure.Button>
                     <Disclosure.Panel className="px-4 pt-4 pb-2 text-lg text-black">
-                      Não. No entanto, asseguramos que as chances de você encontra-lo vão aumentar consideravelmente porque serão milhares de pessoas procurando nos locais onde é mais provável que o seu ente querido esteja.
+                      Não. No entanto, asseguramos que as chances de você
+                      encontra-lo vão aumentar consideravelmente porque serão
+                      milhares de pessoas procurando nos locais onde é mais
+                      provável que o seu ente querido esteja.
                     </Disclosure.Panel>
                   </>
                 )}
@@ -210,17 +262,24 @@ export default function Faq() {
                 {({ open }) => (
                   <>
                     <Disclosure.Button
-                      className={`${open ? 'border-b-[#F86CA7]' : ''
-                        } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
+                      className={`${
+                        open ? 'border-b-[#F86CA7]' : ''
+                      } flex w-full items-center justify-between px-4 py-2 text-2xl border-b-2 text-left font-semibold`}
                     >
-                      <span className="w-4/5">Quanto tempo os planos ficam ativos?</span>
+                      <span className="w-4/5">
+                        Quanto tempo os planos ficam ativos?
+                      </span>
                       <ChevronUpIcon
-                        className={`${open ? 'rotate-180 transform' : ''
-                          } h-[20px] w-[20px]`}
+                        className={`${
+                          open ? 'rotate-180 transform' : ''
+                        } h-[20px] w-[20px]`}
                       />
                     </Disclosure.Button>
                     <Disclosure.Panel className="px-4 pt-4 pb-2 text-lg text-black">
-                      Cada plano tem descrito uma duração de dias onde estaremos emitindo os Alertas, porém não significa que após este período os Alertas serão excluídos, eles continuarão ativos em nossas plataformas.
+                      Cada plano tem descrito uma duração de dias onde estaremos
+                      emitindo os Alertas, porém não significa que após este
+                      período os Alertas serão excluídos, eles continuarão
+                      ativos em nossas plataformas.
                     </Disclosure.Panel>
                   </>
                 )}
@@ -229,16 +288,25 @@ export default function Faq() {
           </div>
 
           <div className="w-full">
-            <form ref={form} onSubmit={sendEmail} className="bg-white p-6 sm:p-11 rounded-lg shadow-md mt-16 max-w-xl sm:mt-20">
+            <form
+              ref={form}
+              onSubmit={sendEmail}
+              className="bg-white p-6 sm:p-11 rounded-lg shadow-md mt-16 max-w-xl sm:mt-20"
+            >
               <div className="mx-auto max-w-2xl text-center mb-10">
-                <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Ainda tem alguma dúvida?</h2>
+                <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                  Ainda tem alguma dúvida?
+                </h2>
                 <p className="mt-2 text-lg leading-8 text-gray-600">
                   Envie-nos uma mensagem, preencha o formulario abaixo.
                 </p>
               </div>
               <div className="grid grid-cols-1 gap-y-4 gap-x-6 sm:grid-cols-2">
                 <div className="sm:col-span-2">
-                  <label htmlFor="name" className="block text-sm font-semibold leading-6 text-gray-900">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-semibold leading-6 text-gray-900"
+                  >
                     Nome
                   </label>
                   <div className="mt-2.5">
@@ -253,7 +321,10 @@ export default function Faq() {
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-semibold leading-6 text-gray-900">
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-semibold leading-6 text-gray-900"
+                  >
                     Celular
                   </label>
                   <div className="mt-2.5">
@@ -267,7 +338,10 @@ export default function Faq() {
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold leading-6 text-gray-900">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-semibold leading-6 text-gray-900"
+                  >
                     Email
                   </label>
                   <div className="mt-2.5">
@@ -282,7 +356,10 @@ export default function Faq() {
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label htmlFor="message" className="block text-sm font-semibold leading-6 text-gray-900">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-semibold leading-6 text-gray-900"
+                  >
                     Mensagem
                   </label>
                   <div className="mt-2.5">
