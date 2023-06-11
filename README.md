@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">
-    <img alt="devfinance" src=".github/fullpage.png" />
+    <img alt="print full page" src=".github/fullpage.png" />
 </h1>
 
 <br>
